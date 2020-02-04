@@ -5,25 +5,26 @@
   },
   "firestore": {
     // "rules": "firestore.rules"
-  }
+  },
 
   // ...
 
   // Optional emulator configuration. Default
   // values are used if absent.
-  // "emulators": {
-  //   "firestore": {
-  //     "port": "8080"
-  //   },
-  //   "functions": {
-  //     "port": "5001"
-  //   },
-  //   "database": {
-  //     "port": "9000"
-  //   },
-  //   "pubsub": {
-  //     "port": "8085"
-  //   }
+  "emulators": {
+    "firestore": {
+      "host": "0.0.0.0"
+    },
+    // "functions": {
+    //   "port": "5001"
+    // },
+    "database": {
+      // "port": "9000"
+      "host": "0.0.0.0"
+    }
+    // "pubsub": {
+    //   "port": "8085"
+    // }
 
-  // }
+  }
 }
