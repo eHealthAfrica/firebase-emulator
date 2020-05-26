@@ -21,6 +21,10 @@
       "enabled": true,      // Default is `true`
       "host": "0.0.0.0", // If unspecified, see CLI log for selected port
       "port": "4000"
+    },
+    "pubsub": {
+      "host": "0.0.0.0",
+      "port": "8085"
     }
   }
 }

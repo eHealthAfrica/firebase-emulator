@@ -37,7 +37,7 @@ case "$1" in
             echo "{\"projects\": {\"default\": \"local-development\"}}" | tee ./fb/.firebaserc
         fi
         cd fb
-        firebase emulators:start --only firestore,database
+        firebase emulators:start --only firestore,database,pubsub
     ;;
 
     run_all )
