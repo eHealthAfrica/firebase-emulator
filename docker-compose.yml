@@ -15,8 +15,8 @@ services:
     build: .
     volumes:
       - ./hosted.json:/app/override.json:rw
-      - firebase:/app/fb/functions:rw
-      - firebase:/app/fb/public:rw
+      # - firebase:/app/fb/functions:rw
+      # - firebase:/app/fb/public:rw
       - firebase:/home/docker/.cache/firebase/emulators:rw
       - firebase:/app/fb:rw
     environment:
