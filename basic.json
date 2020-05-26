@@ -6,6 +6,8 @@
   "firestore": {
     // "rules": "firestore.rules"
   },
+  "ui": {},
+  "hosting": {},
   "emulators": {
     "firestore": {
       // "port": "8080"
