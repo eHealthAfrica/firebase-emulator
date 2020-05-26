@@ -20,6 +20,10 @@ case "$1" in
     ;;
 
     run_basic )
+            
+        if [ ! -f "./fb/firebase.json" ]; then
+            cp override.json ./fb/firebase.json || true
+        fi
         cd fb
         firebase emulators:start --only firestore,database
     ;;

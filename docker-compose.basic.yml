@@ -10,5 +10,7 @@ services:
   # Firebase Eumulator
   # -------------------------------------
   emulator:
+    volumes:
+      - ./basic.json:/app/override.json:rw
     entrypoint:
       ["/app/entrypoint.sh", "run_basic"]

@@ -22,7 +22,6 @@ RUN sudo apt install -y openjdk-11-jre-headless
 RUN sudo mkdir /app
 RUN sudo mkdir /app/fb
 WORKDIR /app
-# COPY ./firebase.json /app/firebase.json
 COPY ./entrypoint.sh /app/entrypoint.sh
 RUN sudo chown -R docker:docker /app
 RUN sudo chmod a+x /app/entrypoint.sh
