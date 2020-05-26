@@ -1,0 +1,27 @@
+version: "2.1"
+
+services:
+
+  # -------------------------------------
+  # Firebase Eumulator
+  # -------------------------------------
+
+  emulator:
+    image: ehealthafrica/firebase-emulator:latest
+    # volumes:
+    #   # not required, but nice because it caches downloaded emulator binaries
+    #   - firebase:/home/docker/.cache/firebase/emulators:rw
+    #   - firebase:/app/fb:rw
+    ports:
+      - 5001:5001
+      - 9000:9000
+      - 8080:8080
+      - 8085:8085
+      - 5000:5000
+      - 4000:4000
+    entrypoint:
+      ["/app/entrypoint.sh", "run_basic"]
+
+volumes:
+  # not required, but nice because it caches downloaded emulator binaries
+  firebase:

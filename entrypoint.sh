@@ -31,7 +31,11 @@ case "$1" in
 
     run_basic )
         if [ ! -f "./fb/firebase.json" ]; then
-            cp override.json ./fb/firebase.json || true
+            if [ -f "override.json" ]; then
+                cp override.json ./fb/firebase.json
+            else
+                cp basic.json ./fb/firebase.json || true
+            fi
         fi
         if [ ! -f "./fb/.firebaserc" ]; then
             echo "{\"projects\": {\"default\": \"local-development\"}}" | tee ./fb/.firebaserc
