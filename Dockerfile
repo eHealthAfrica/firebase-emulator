@@ -16,14 +16,14 @@ RUN sudo apt update
 RUN sudo apt install -y curl
 # Install base tools
 RUN curl -sL firebase.tools | bash
-RUN sudo mkdir /app
-RUN sudo chown -R docker:docker /app
 # Fix issue with JRE installation
 RUN sudo mkdir -p /usr/share/man/man1
 RUN sudo apt install -y openjdk-11-jre-headless 
+RUN sudo mkdir /app
+RUN sudo mkdir /app/fb
 WORKDIR /app
-COPY ./firebase.json /app/firebase.json
-# First run will download the current .jar files.
-# If on UP it's downloading new jars, we need to rebuild
-RUN firebase emulators:exec ls >> /dev/null
-
+# COPY ./firebase.json /app/firebase.json
+COPY ./entrypoint.sh /app/entrypoint.sh
+RUN sudo chown -R docker:docker /app
+RUN sudo chmod a+x /app/entrypoint.sh
+ENTRYPOINT /app/entrypoint.sh

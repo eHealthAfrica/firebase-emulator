@@ -2,7 +2,7 @@
 # Firebase Emulator for Tests local and CI
 # ------------------------------------------------------------------------------
 
-version: "3.2"
+version: "3.3"
 
 services:
 
@@ -20,8 +20,8 @@ services:
       - firebase:/home/docker/.cache/firebase/emulators:rw
       - firebase:/app/fb:rw
     environment:
-      FIREBASE_TOKEN: ${FIREBASE_TOKEN-}
-      FIREBASE_PROJECT: ${FIREBASE_PROJECT-}
+      FIREBASE_TOKEN: ${FIREBASE_TOKEN}
+      FIREBASE_PROJECT: ${FIREBASE_PROJECT}
     ports:
       - 5001:5001
       - 9000:9000
@@ -31,6 +31,7 @@ services:
       - 4000:4000
     entrypoint:
       ["/app/entrypoint.sh"]
+      # ["/bin/bash", "/app/entrypoint.sh", "bash"]     
 
 volumes:
   firebase:
