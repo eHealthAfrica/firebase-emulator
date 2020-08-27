@@ -7,15 +7,21 @@
     // "rules": "firestore.rules"
   },
   "ui": {},
-  "functions": {}, 
-  // "hosting": {
-  //   "public": "public",
-  //   "ignore": [
-  //     "firebase.json",
-  //     "**/.*",
-  //     "**/node_modules/**"
-  //   ]
-  // }, 
+  "functions": {
+    "predeploy": [
+      "npm --prefix  run lint"
+    ]
+  }, 
+  "hosting": {
+    "public": "public",
+    "host": "0.0.0.0",
+    "ignore": [
+      "firebase.json",
+      "hosted.json",
+      "**/.*",
+      "**/node_modules/**"
+    ]
+  }, 
   // Optional emulator configuration. Default
   // values are used if absent.
   "emulators": {
@@ -34,10 +40,13 @@
     "database": {
       // "port": "9000"
       "host": "0.0.0.0"
+    },
+    "pubsub": {
+      "host": "0.0.0.0",
+      "port": "8085"
+    },
+    "hosting": {
+      "host": "0.0.0.0"
     }
-    // "pubsub": {
-    //   "port": "8085"
-    // }
-
   }
 }

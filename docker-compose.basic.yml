@@ -1,0 +1,16 @@
+# ------------------------------------------------------------------------------
+# Firebase Emulator for Tests local and CI
+# ------------------------------------------------------------------------------
+
+version: "3.2"
+
+services:
+
+  # -------------------------------------
+  # Firebase Eumulator
+  # -------------------------------------
+  emulator:
+    volumes:
+      - ./basic.json:/app/override.json:rw
+    entrypoint:
+      ["/app/entrypoint.sh", "run_basic"]
